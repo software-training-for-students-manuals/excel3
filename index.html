@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<!-- 
+WELCOME USER! You've reached the source code for a manual created by STS. If you plan on updating or editing this manual, then you're in the right place!
+
+Before editing any STS manuals, please read through the editing guide at https://sts.doit.wisc.edu/manual-editing-guide and follow all recommendations. It is important that we follow the conventions set in the guide in order to maintain quality and consistency across all of our training materials.
+
+Good luck, and have fun!
+-->
+
+
+    <!-- page title -->
+    <title>Excel 3</title>
+
+        <meta charset="utf-8">
+        <meta name="description" content="Software manual provided by Software Training for Students at the University of Wisconsin.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel='stylesheet' id='uwmadison-fonts-css'  href='https://brand.wisc.edu/content/themes/uw-theme/dist/fonts/uw160/fonts.css?ver=1.1.1' type='text/css' media='all' /><link rel="stylesheet" type="text/css" href="../master-files/css/stylesheet.css">
+        <script src="../master-files/highlight.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="../master-files/smooth-scroll.js"></script>
+        <script src="../master-files/primary-functions.js"></script>
+        <script src="../master-files/ga.js"></script>  
+</head>
+
+<body>
+    <!-- begin front page -->
+    <div class="manual-front-page"> 
+        <div id="coverpage-title"> 
+            <h1>Excel 3</h1> 
+            <h2>Macros and VBA</h2> 
+        </div> 
+        
+        <div id="about-page"></div> 
+        
+        <div id="outline"></div> 
+        
+    </div>                
+    <!-- end front page -->
+
+    <!-- BEGIN MAIN CONTENT -->
+
+
+  <!--Introduction START -->
+  <section class="topic">    
+     <h1 class="no-top-margin">Introduction</h1>
+      <p>Welcome to Excel 3: Macros &amp; VBA! This course will build upon the skills you have learned in your
+      previous experiences with Excel. After Excel 3, you will have learned the building blocks necessary to
+      create macros which automate lengthy and tedious tasks in Excel.</p>
+
+      <p>Excel 3 is the most advanced Excel course offered by STS. It is extensively focused on the Office VBA
+      programming environment, which provides the user with control over Office files and other processes that use VBA.</p>
+
+      <h2>Required Skills</h2>
+      <p>You should have a basic knowledge of the Windows environment and have firm understanding of all the basics of Excel. This understanding can be achieved through the completion of at least a few of the previous STS Excel courses or equivalent personal experience.</p>
+  </section>
+  <!--Introduction END -->
+
+  <!--Macros START -->
+  <section class="topic">
+          
+    <h1>Macros</h1>
+    <p>Anyone who has used a computer program regularly has most likely learned keyboard shortcuts for
+    their favorite commands. These help us save time on fairly basic operations such as copy (Control+C),
+    paste (Control+V), and save (Control+S). Excel (and most other Microsoft Office products) lets us
+    create our own shortcuts if we wish. These custom shortcuts are called “Macros”. A macro is a recorded
+    set of steps that allows users to automate lengthy, menial, or common tasks. They can even be assigned to
+    a keyboard shortcut.</p>
+
+    <h3>Exercise: Using a Macro</h3>
+
+    <p>In this exercise, we will see how macros can save us time and improve consistency once they have been
+    created.</p>
+
+    <div class="side-image-large">
+    <img src="images/intro-macros-1.png" alt="Security Warning">
+    </div>
+
+    <ol class="instruction-list">
+    <li><p>Open Macro-VBA Examples.xlsm from the class files folder.</p></li>
+    <li><p>A Security Warning will appear saying that macros have been disabled. Click "Enable Content" to make sure that our macros work.</p>
+
+    <p>The purpose of this warning is to let you know that there is a macro coded within this file. Macros
+    are actually computer code that runs in the background of Excel and, if used incorrectly, could cause problems. This warning is to make sure you expected there to be a macro in this file. If you expected a macro in this file, go ahead and click enable content. If you received this file from someone else and did not expect a macro to be in the file, you may not want to enable the content yet and instead check with the person you got the file from to figure out if the macro is necessary and safe to run.</p>
+    </li>
+
+    <li><p>Examine the three Worksheets in this Workbook by clicking on the three tabs on the bottom left side of the screen.</p>
+    <p>In this example, you receive reports daily at your job with a summary of yesterday’s employee hours.
+    They come in a poorly formatted sheet as the person who sends them doesn’t know Excel very well. It is your job to format these reports so they are presentable financial documents and to determine the total labor costs for that day.</p></li>
+
+    <div class="centered-image-medium">
+    <img src="images/intro-macros-2.png" alt="Report 1 worksheet">
+    </div>
+
+    <li><p>Switch back to the Report 1 worksheet and spend some time using your Excel knowledge to format the report and calculate the total wages paid for the day.</p>
+    <p>Doing this task once doesn't seem like a big deal, but having to do it every day would become very tedious in short time. This is where our macro comes in! This workbook has a macro written and saved that automatically formats the report and makes a few calculations. It has been set to the keyboard shortcut Ctrl+Y.</p></li>
+    <li><p>Press Ctrl+Y to run the macro. The macro will run and the sheet will be updated with better formatting and calculation methods!</p>
+
+    <div class="centered-image-medium">
+    <img src="images/intro-macros-3.png" alt="Macro run">
+    </div>
+
+    </li>
+
+    <li><p>Run this same macro on the second and third worksheet as well. We've made a tedious, painstaking task extremely simple with macros!</p></li>
+
+    </ol>
+  </section>
+  <!--Macros END-->
+
+  <!--VBA and Visual Basic Editor START -->
+  <section class="topic">
+        
+    <h1>VBA and the Visual Basic Editor</h1>
+
+    <div class="sidebar-note">
+    <h2>VBA Support</h2>
+    <p>Excel, Word, Powerpoint, Outlook, Access, OneNote, Project, InfoPath, and Visio all have support for macros!</p>
+    </div>
+
+    <p>The Microsoft Office Suite is written using a computer language known as Visual Basic. In most Office programs, there is a built-in program called the Visual Basic Editor which allows you to code your own customizations to Office applications using the Visual Basic for Applications (VBA) programming
+    language.</p>
+
+    <p>The vast majority of Excel users do not use macros, so some of the options concerning macros and VBA are hidden by default. Let's open up our advanced macro options!</p>
+
+    <h3>Exercise: Enabling the Developer Tab</h3>
+
+    <ol class="instruction-list">
+      <li><p>Click on the File Tab, then click on Options at the bottom of the File menu. The Excel Options dialog box will appear.</p></li>
+
+      <li><p>Select the Customize Ribbon button from the menu on the left.</p></li>
+
+      <li><p>Check the box for the Developer Tab in the box on the right side under Main Tabs.</p></li>
+
+      <div class="centered-image-large">
+      <img src="images/intro-vba-1.png" alt="Check option for developer">
+      </div>
+
+      <li><p>Click on OK to save your changes. A Developer tab will appear on the Ribbon!</p></li>
+    </ol>
+
+    <p>Now that we have all the tools we need, let's look at the VBA code for this workbook. We should expect to find code for the macro that we just used to format the three work summaries.</p>
+
+    <h3>Exercise: Viewing a Macro in the Visual Basic Editor</h3>
+
+    <ol class="instruction-list">
+
+      <li><p>There are a few different ways to open the VBA Editor.</p>
+
+      <ol class="instruction-list">
+
+        <li><p>Right-click on the name of one of the worksheets and click View Code.</p></li>
+
+        <div class="centered-image-small">
+        <img src="images/intro-vba-2.png" alt="View code by right clicking">
+        </div>
+
+        <li><p>Alternatively, open the Developer tab and click on the Visual Basic button.</p></li>
+
+        <div class="centered-image-large">
+        <img src="images/intro-vba-3.png" alt="View code in developer tab">
+        </div>
+
+      </ol>
+
+      </li>
+
+      <p>The Visual Basic Editor will open in a separate window.</p>
+
+      <div class="centered-image-medium">
+      <img src="images/intro-vba-4.png" alt="Visual Basic Editor">
+      </div>
+
+      <p>The editor has five main parts: the Project Explorer, the Property Window, the Toolbar, the Menu Bar, the Workspace.</p>
+
+
+      <table>
+        <tbody>
+        
+        <tr>
+            <td>Project Explorer</td>
+            <td>All macros and code created for use in Excel must be associated with a project. This area provides a navigational interface to open code for different Excel objects(worksheets or workbooks), forms, and modules. To open a coding window, double-click on the object in the Project Explorer.</td>
+            <td>
+            <div class="centered-image-medium">
+      <img src="images/intro-vba-5.png" alt="Project explorer">
+      </div>
+        
+          </td>
+          </tr>
+        
+          <tr>
+            <td>Property Window</td>
+            <td>All objects in the Project Explorer have certain properties associated with it which can be viewed and changed here. This is also used to view and change the properties associated with UserForm controls.</td>
+            <td>
+            
+            <div class="centered-image-medium">
+      <img src="images/intro-vba-6.png" alt="Property Window">
+      </div>
+
+            </td>
+          </tr>
+          <tr>
+            <td>Tool and Menu Bars</td>
+            <td>The tool bar contains quick shortcuts to many commonly used functions and commands. The menu bar contains all the commands that can be performed in the VB editor. These will be examined as needed.</td>
+            <td>
+            
+            <div class="centered-image-medium">
+      <img src="images/intro-vba-7.png" width="300px" alt="Tools and Menu Bars">
+      </div>
+
+        </td>
+          </tr>
+          
+          <tr>
+            <td>Workspace</td>
+            <td>The workspace is the large gray area in the center. This is where we
+      can open code windows to view and edit our macros. The code windows can be minimized,
+      maximized, and closed with the common three buttons in the upper right corner of the code
+      windows.</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <li><p>In the Project Explorer, click the plus sign next to the Modules folder of "VBAProject (Macro-VBA Examples.xlsm" if it is not already expanded.</p></li>
+
+      <li><p>Double-click on Module 1 to open it in the Workspace. </p></li>
+
+      <div class="centered-image-medium">
+      <img src="images/intro-vba-8.png" alt="Module1 location ">
+      </div>
+
+      <li><p>Scroll through the code and try to figure out what's going on. Let's look at lines 8 to 21, which can be grouped into three parts:
+
+      <ol class="instruction-list">
+
+        <li><p>These two lines define a selected range and active cell.</p>
+
+   <pre><code>Range("A2:F2").Select
+Range("F2").Activate</code></pre>
+        </li>
+        <li>
+        <p>These lines apply changes in formatting to the selected range.</p>
+
+        <pre><code>With Selection
+.HorizontalAlignment = xlCenter
+.VerticalAlignment = xlBottom
+.WrapText = False
+.Orientation = 0
+.AddIndent = False
+.IndentLevel = 0
+.ShrinkToFit = False
+.ReadingOrder = xlContext
+.MergeCells = False
+End With</code></pre>
+
+        </li>
+
+        <li><p>This last line merges the selection into a single cell.</p></li>
+
+        <pre><code>Selection.Merge</code></pre>
+
+      </ol>
+
+      This is Visual Basic for Applications, and we will be learning how to write it today!</p></li>
+
+      <li><p>After you are done, close out of the VBA Editor to return to the normal Excel interface.</p></li>
+
+      <div class="centered-image-medium">
+      <img src="images/intro-vba-9.png" alt="Close VBA Editor">
+      </div>
+
+    </ol>
+
+    <h2>Today's Project</h2>
+    <p>For the remainder of this course, imagine that you are a teacher who has made the following promises to their students:</p>
+    <ul>
+    <li>If a student earns 100% on the final exam, their final grade will automatically be an A.</li>
+    <li>If a student recieves a score greater than 95% on any homework assignment, their final grade will be upgraded to the next letter grade.</li>
+    </ul>
+
+    <p>Let's start by recording a macro that changes the formatting of a cell: we will use this formatting to signify changes that we make to our spreadsheet.</p>
+  </section>
+  <!--VBA and Visual Bsic Editor END -->
+
+  <!--Recording Macros START -->
+  <section class="topic">
+        
+    <h1>Recording Macros</h1>
+    <p>After seeing the hundreds of lines of code and seemingly complex syntax associated with the report
+    macro example, you may be feeling overwhelmed and think you will never be able to make something that complicated. Don’t fret, it is easier than it seems thanks to the "Record Macro" function! This allows you to record clicks and changes that you make and translates it into VBA for you.</p>
+
+    <h3>Exercise: Recording a Simple Macro</h3>
+
+    <ol class="instruction-list">
+
+    <li><p>Open Gradebook.xlsm from the class files.</p></li>
+
+    <li><p>In this gradebook, locate and select the first cell in the Final Exam row with a value of 100%. This will be cell L6.</p></li>
+
+    <div class="centered-image-large">
+    <img src="images/recording-1.png" alt="Find cell L6">
+    </div>
+
+    <li><p>In the Developer tab, click on the Record Macro button.</p></li>
+
+    <div class="centered-image-large">
+    <img src="images/recording-2.png" alt="Record Macro button">
+    </div>
+
+    <li><p>In the Record Macro box that appears, enter the following information:</p>
+
+    <ol class="instruction-list">
+    <li><p>Enter "GradeCheck" in the "Macro name:" box. Descriptive macro names keep our macros organized.</p></li>
+    <li><p>Set the shortcut key to Ctrl + g. For this step, you just have to make sure you're not overriding a commonly used shortcut such as Ctrl + c (copy).</p></li>
+    <li><p>Make sure "This Workbook" is selected for the "Store macro in:" box.</p></li>
+    <li><p>A description tells a workbook user what the macro will do. Set the Description to something like "Formats the selected cell green and bolds text."</p></li>
+    </ol>
+
+    <div class="centered-image-medium">
+    <img src="images/recording-3.png" alt="Record Marco window">
+    </div>
+
+    </li>
+
+    <li><p>Click OK and DO NOT click anything else! Excel has now begun recording everything we do within the program, so keeping our actions to a minimum will keep our macro free of clutter. Note that if you mess up while recording a macro you can always stop and try again!</p>
+
+    <p>You can see Excel is recording by looking in the bottom left corner of the Excel window. There is a square that represents a "stop" button (like on a remote control). By hovering over this, the following text will appear: "A macro is currently recording. Click to stop recording." We will click this once we have done everything we want to have our macro do. (The image below shows the difference between what this section of the Excel interface looks like recording versus not recording.)</p></li>
+
+    <div class="centered-image-medium">
+    <img src="images/recording-4.png" alt="During and After recording">
+    </div>
+
+    <li><p>Complete the following three tasks with as few clicks as possible:</p>
+
+    <ol class="instruction-list">
+
+    <li><p>Go to the Home tab.</p></li>
+
+    <div class="side-image-medium">
+    <img src="images/recording-5.png" alt="Bold and Paint bucket tool">
+    </div>
+
+    <li><p>Click the Bold button on the Font palette.</p></li>
+
+    <li><p>Click the Paint Bucket drop-down arrow on the Font palette and select green from the Standard Colors section.</p></li>
+    </ol>
+
+    </li>
+
+    <li><p>Our macro is finished! Click the Stop button in the lower left corner next to "READY."</p></li>
+
+    <p>Congratulations, you have just made a macro! Let's test it out.</p>
+
+    <li><p>Click on another cell in the L column and try changing its formatting with Ctrl + G.</p></li>
+
+    <p>The macro worked and made the selected cells green and bold! This was a simple example that demonstrates the power of being able to record macros. You don’t have to know anything about VBA to make simple
+    macros. Simply use the Record Macro function.</p>
+
+    <p>Let’s reset our worksheet for the next exercise where we will continue this example. A macro has
+    already been recorded in this class file to erase any formatting and grade updates. It has been assigned
+    to Ctrl+R.</p>
+
+    <li><p>Press Ctrl+R to run the Reset Formatting macro that we have made for you.</p></li>
+
+    </ol>
+  </section>
+  <!--Recording Macros END -->
+
+  <!--VBA Basics START -->
+  <section class="topic">
+        
+    <h1>VBA: The Basics</h1>
+
+    <h2>Programming Concepts</h2>
+    <p>As Excel VBA is a programming language (more specifically an object-based, scripting language), it is useful to review some basic programming concepts for those who are new to programming. We will start off by talking about what exactly programming is. Then we will discuss some basic programming concepts and terminology used in (object-based) programming.</p>
+
+    <h2>What Is Programming?</h2>
+    <p>A program is an organized, written solution to a problem or task that typically employs some kind of symbolic notation. Programming is thus the art (and sometimes science) of writing out programs. In computer applications, programming typically involves writing out some sequence of computer readable
+    instructions. In this way, learning how to programming is a lot like learning a new language to speak to a friend who only speaks a language different from you. Some examples of programs that we come across in everyday life are:</p>
+
+    <ul>
+      <li>A calculator program that allows the user to quickly make numerical computations.</li>
+      <li>A text editing program that facilitates typing and editing a document.</li>
+      <li>A Web program that provides an interface for receiving and sending emails.</li>
+    </ul>
+
+    <h2>Basic Programming Concepts</h2>
+    <p>Since the development of computers, hundreds of programming languages have been developed to
+    do a variety of tasks. Fortunate for us, though, almost all programming language share a basic logical
+    structure of concepts and terms. The main concepts employed in programming languages are:</p>
+
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Concept</th>
+          <th>Description</th>
+          <th>Example</th>
+        </tr>
+        <tr>
+          <td>Conditional Logic</td>
+          <td>Code will run only if a certain condition is met.</td>
+          <td>Give a student an A only if they receive 100% on the final.</td>
+        </tr>
+        <tr>
+          <td>Looping</td>
+          <td>Code will run repeatedly until it is stopped.</td>
+          <td>Keep processing grades for each student until there are no students left.</td>
+        </tr>
+        <tr>
+          <td>Functions</td>
+          <td>A prewritten rule or process that can be used at any time.</td>
+          <td>Run the premade grading function for every student.</td>
+        </tr>
+        <tr>
+          <td>Variables</td>
+          <td>A "box" to store information that a computer will remember and recognize.</td>
+          <td>Store each student's grade as a variable so it can be accessed again later.</td>
+        </tr>
+        <tr>
+          <td>Objects</td>
+          <td>Can store information like variables, but can also make actions (called methods) and have characteristics (called properties).</td>
+          <td>Arrays, cells, and worksheets are all different Excel objects.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Now that you have an introduction to programming, let's start working with VBA!</p>
+
+    <h3>Exercise: Cleaning Up Recorded Code</h3>
+
+    <p>Since code automatically written by Excel can be a little bit inefficient and cluttered, our first task will be to streamline the macro that we have just recorded.</p>
+
+    <ol class="instruction-list">
+
+     <li><p>Open the VBA Editor by clicking on the Visual Basic button in the Developer tab.</p></li>
+
+     <li><p>In the Project Explorer under Modules, double-click Module1.</p></li>
+
+    <p>The code for our recorded macro will appear. Yours may be slightly different depending on the order and number of your clicks, but that is OK for now.</p>
+
+    <pre><code>
+Sub GradeCheck()
+‘
+‘ GradeCheck Macro
+‘ Formats selected cell green and bolds text.
+‘
+‘ Keyboard Shortcut: Ctrl+g
+‘
+Selection.Font.Bold = True
+With Selection.Interior
+.Pattern = x1Solid
+.PatternColorIndex = x1Automatic
+.Color = 5287936
+.TintAndShade = 0
+.PatternTintAndShade = 0
+End With
+End Sub
+</code></pre>
+
+    <div class="sidebar-note">
+    <h2>Colors</h2>
+    <p>The different colored text in the window serves no functional purpose other than to help you identify
+    different parts of the code. VBA keywords are blue, comments are green, errors are red, and all other
+    code is black. The text is colored automatically and consistently for you.</p>
+    </div>
+
+    <p>The first line <span class="type-text">Sub GradeCheck()</span> initializes the macro and the last line <span class="type-text">End Sub</span> ends the macro. All the relevant code of the macro comes between these two lines are indented for organization. This is an example how many lines in VBA come in pairs and act as containers to hold other code. Both lines are necessary for any macro and are rarely changed.</p>
+
+    <li><p>Examine the code in the macro.</p></li>
+      
+      <p>The statement that changes the font to bold is <span class="type-text">Selection.Font.Bold = True</span>. In this case, the Selection object has a Font object stored within it, and we are setting that Font's "Bold" property to True.</p> 
+      
+      <h2>With: Our First VBA Statement</h2>
+      
+      <p>The VBA code that changes the cell to green is within a With statement. With statements are space-saving devices that allow multiple changes to be made to a single object. All of the code inside a With statement (in between the With and End With keywords) is run with regard to the With object (in this case, Selection.Interior).</p>
+      
+      <p>Thus, the statement that changes the cell color to green starts with:<br><span class="type-text">With Selection.Interior</span><br>and continues with:<br><span class="type-text">.Color=5287936</span><br>and ends with:<br><span class="type-text">End With</span></p>
+
+    <p>However, Excel has added some unnecessary lines of code that are doing nothing but adding clutter; let's clean our macro a bit!</p>
+
+    <li>
+      <p>Delete the lines referencing the <span class="type-text">.Pattern</span>, <span class="type-text">.PatternColorIndex</span>, <span class="type-text">.TintAndShade</span>, and <span class="type-text">.PatternTintAndShade</span> properties of Selection.Interior. Excel has automatically added these lines even though we did not change these properties! Your code should now look like this:</p></li>
+
+
+    <pre><code>Sub GradeCheck()
+‘
+‘ GradeCheck Macro
+‘ Formats selected cell green and bolds text.
+‘
+‘ Keyboard Shortcut: Ctrl+g
+‘
+Selection.Font.Bold = True
+With Selection.Interior
+    .Color = 5287936
+End With
+End Sub</code></pre>
+
+    <p>Since we've made changes to our code, we should make sure it still works.</p>
+
+    <li><p>Go back to the regular Excel environment and try Ctrl+G on one of the 100% final scores. If nothing happens, make sure your macro code is the same as the code above!</p></li>
+
+    <li><p>Use Ctrl + R to clear the worksheet's formatting.</p></li>
+
+    <p>Let's make one more change to our code that will make better use of our With statement!</p>
+
+    <li><p>Create a With statement that makes two changes to the Selection object: first, <span class="type-text">.Font.Bold=True</span>, and second, <span class="type-text">.Interior.Color=5287936</span>. Note that we can only do this becouse both Font and Interior are child objects of Selection.</p></li>
+
+    <p>Your code should now look like this:</p>
+
+    <pre><code>Sub GradeCheck()
+‘
+‘ GradeCheck Macro
+‘ Formats selected cell green and bolds text.
+‘
+‘ Keyboard Shortcut: Ctrl+g
+‘
+With Selection
+    .Interior.Color = 5287936
+    .Font.Bold = True
+End With
+End Sub</code></pre>
+
+    <li><p>Go back to the regular Excel environment to test this edited macro!</p></li>
+
+    </ol>
+  </section>
+  <!--VBA BAsics END-->
+
+  <!--Variables, Oblects and While START -->
+  <section class="topic">
+        
+    <h1>VBA: Variables, Objects, and While</h1>
+
+    <p>If we want our macro to do the formatting for us, we will need it to select cells on its own. To begin, we will make our macro apply a green/bold formatting to every student regardless of their grade, and we will put an A in the Reported Grade column for every student as well. Later, we will add conditional logic to make our macro only apply these changes for those that got a 100% on the final exam.</p>
+
+    <ol class="instruction-list">
+
+    <li><p>Switch back to the code module for Module1.</p></li>
+    <li><p>Add the following lines to the macro code (shown in blue):</p></li>
+
+    <pre><code>Sub GradeCheck()
+‘
+‘ GradeCheck Macro
+‘ Formats selected cell green and bolds text.
+‘
+‘ Keyboard Shortcut: Ctrl+g
+‘
+<span style="color: #00FFFF">Dim RowNum As Integer
+RowNum = 4</span>
+With Selection
+    .Interior.Color = 5287936
+    .Font.Bold = True
+End With
+End Sub</code></pre>
+
+    <p>You have just created a Variable! Variables in VBA are called Dimensions (abbreviated "Dim"). We will use and edit this variable throughout our code by referring to its name, "RowNum", in place of a number. For now, <strong>the value of RowNum is 4.</strong></p>
+
+    <p>Let's use this RowNum variable to add two Object references to our code! First, we will change the value of cell O4 to "A". Next, we will use the Select method to temporarily define cell L4 as the Selection object that our With statement formats.</p>
+
+    <li><p>Remembering that RowNum = 4, add the two blue lines below to your macro.</p></li>
+
+<pre><code>Sub GradeCheck()
+‘
+‘ GradeCheck Macro
+‘ Formats selected cell green and bolds text.
+‘
+‘ Keyboard Shortcut: Ctrl+g
+‘
+Dim RowNum As Integer
+RowNum = 4
+<span style="color: #00FFFF">Cells(RowNum, "O") = "A"
+Cells(RowNum, "L").Select</span>
+With Selection
+    .Interior.Color = 5287936
+    .Font.Bold = True
+End With
+End Sub</code></pre>
+
+    <p>The reason we are using 4 for the RowNum value is because there is no Gradebook data in rows 1, 2, or 3. Row 4 is the first row of our data.</p>
+
+    <p>Instead of only changing row 4, though, we want to run our code for every row in our gradebook! This is why we have stored the value of 4 in a variable: once we are done formatting row 4, we can add one to the value of RowNum and rerun the entire codeblock for row 5, then row 6, and so on. This is called <em>incrementing</em> and we will need a Loop to make it effective.</p>
+
+    <p>We will use the While statement for our loop. A While statement runs code over and over again as long as a certain condition is true.</p>
+    <li><p>Add three new lines to your macro to build this loop and set up an incrementing process!</p></li>
+
+    <pre><code>Sub GradeCheck()
+‘
+‘ GradeCheck Macro
+‘ Formats selected cell green and bolds text.
+‘
+‘ Keyboard Shortcut: Ctrl+g
+‘
+Dim RowNum As Integer
+RowNum = 4
+<span style="color: #00FFFF">While (Cells(RowNum, "B") &lt;&gt; "")
+</span>
+    Cells(RowNum, "O") = "A"
+    Cells(RowNum, "L").Select
+    With Selection
+        .Interior.Color = 5287936
+        .Font.Bold = True
+    End With
+    <span style="color: #00FFFF">RowNum = RowNum + 1
+Wend</span>
+End Sub</code></pre>
+
+      <p>Pay attention to what code is being repeated. We want the changes to our Cells objects to run for every row in our Gradebook, and we want the incrementing line to move RowNum to the next row every time the loop runs. However, we do not want RowNum = 4 to run every time because we would never leave the first row of our Gradebook. </p>
+
+      <p>Also take note of the While condition:</p>
+      <p><span class="type-text">
+      <span style="color: #FF0000">While ( 
+      <span style="color: #0000FF">Cells(RowNum, "B")</span> 
+      <span style="color: #00BB00">&lt;&gt;</span> 
+      <span style="color: #DD00FF">""</span>
+      )</span>
+      </span></p> 
+      <p>This expression is essentially stating that the macro should repeat the following code as long as it is not empty, or:</p>
+
+      <p>
+      <span style="color: #FF0000">as long as</span> 
+      <span style="color: #0000FF">the cell in the current row's B column</span> 
+      <span style="color: #00BB00">is not equal to</span> 
+      <span style="color: #DD00FF">nothing.</span></p>
+
+      <p>In plainer terms, the macro will stop once it reaches an empty row. We can therefore run this macro on any amount of grade data and it will automatically stop whenever it has finished the whole set!</p>
+
+      <p>The macro isn't finished yet, but we can test it out to see if it works! Because we do not have any criteria that determine when cells are changed, the macro will just change every final score in the O column to "A" and make every exam score in the L column green.</p>
+
+      <li><p>Navigate back to the Excel document and run the query with Ctrl+G. Make sure the document responds as you expect it to!</p></li>
+
+      <div class="centered-image-medium">
+      <img src="images/programming-1.png" alt="Formatted spreadsheet">
+      </div>
+      <li><p>Use the reformatting macro (Ctrl+R) to undo these changes.</p></li>
+
+    </ol>
+  </section>
+  <!--Variables, Oblects and While END -->
+
+  <!--If START -->
+  <section class="topic">
+    
+    <h1>VBA: If</h1>
+
+    <p>As seen with the While statement, true-or-false questions (boolean variables) can be powerful tools in programming. The If statement allows us to run a section of code a single time only if a boolean expression is true. If the expression is false, the program will skip the section of code and continue after the End If line. We will use the If statement to check if the student got a 100% on the final and only apply the formatting and grade change if this is true.</p>
+
+    <ol class="instruction-list">
+
+    <li><p>Switch back to the code window for Module1.</p></li>
+
+    <li><p>Add the two lines in blue:</p></li>
+
+    <pre><code>Sub GradeCheck()
+‘
+‘ GradeCheck Macro
+‘ Formats selected cell green and bolds text.
+‘
+‘ Keyboard Shortcut: Ctrl+g
+‘
+Dim RowNum As Integer
+RowNum = 4
+While (Cells(RowNum, "B") &lt;&gt; "")
+    <span style="color: #00FFFF">If (Cells(RowNum, "L") = 100)   Then</span>
+        Cells(RowNum, "O") = "A"
+        Cells(RowNum, "L").Select
+        With Selection
+            .Interior.Color = 5287936
+            .Font.Bold = True
+        End With
+    <span style="color: #00FFFF">End If</span>
+    RowNum = RowNum + 1
+Wend
+End Sub</code></pre>
+
+    <li><p>The If statement has three parts: the Boolean expression, the code that will run, and the End If.
+    The Boolean expression evaluates as explained previously. Here it checks to see if the Cell in column L, the final grade, is equal to 100. Then, if that expression evaluates to true, the code between the If and End If will run. In this case, the code that runs gives the student an “A” and formats their final exam grade.</p></li>
+
+
+    <li><p>Examine the code you entered to make sure it makes sense. Go over the explanations if you are not sure of what is going on.</p></li>
+
+    <li><p>Switch back to Excel and test the macro by pressing Ctrl+G.</p></li>
+
+    <div class="centered-image-medium">
+    <img src="images/programming-2.png" alt="Tested output">
+    </div>
+
+    <p>The program runs and highlights only the final exam grades that equal 100% and puts an "A" in the
+    grade reported column. We have now completed the first portion of our macro to check our first grade
+    criteria (if they get a 100% on the final, they get an "A"). To accomplish this, first, we recorded
+    an macro to get the code necessary for formatting. Next, we added a While statement that looped
+    through every student. And finally, we added the logic to check if the student got a 100% by using the
+    If statement. These few basic steps combined to make a macro that could make it much easier to check
+    final exam grades if there are hundreds of students in a class.</p>
+
+    <li><p>Clean the spreadsheet with Ctrl+R.</p></li>
+
+    </ol>
+  </section>
+  <!--If END-->
+
+  <!--For START -->
+  <section class="topic">
+    
+    <h1>VBA: For</h1>
+
+    <p>Now we need to find out if the other students deserve to get their final grade bumped up one letter. For this part, we will look at each of the students' homework grades to check and see if they got higher than a 95% on a homework assignment.</p>
+
+    <ol class="instruction-list">
+
+    <li><p>Switch back to the Code window.</p></li>
+
+    <li><p>Type the following lines of code into the macro to create the For loop and necessary variables:</p>
+
+    <pre><code><span style="color: #00FFFF">Option Explicit</span>
+Sub GradeCheck()
+‘
+‘ GradeCheck Macro
+‘ Formats selected cell green and bolds text.
+‘
+‘ Keyboard Shortcut: Ctrl+g
+‘
+Dim RowNum As Integer
+<span style="color: #00FFFF">Dim ColNum As Integer
+Dim GreaterThan95 As Boolean</span>
+RowNum = 4
+While (Cells(RowNum, "B") &lt;&gt; "")
+    If (Cells(RowNum, "L") = 100) Then
+        Cells(RowNum, "O") = "A"
+        Cells(RowNum, "L").Select
+        With Selection
+            .Interior.Color = 5287936
+            .Font.Bold = True
+        End With
+    End If
+    <span style="color: #00FFFF">GreaterThan95 = False
+    For ColNum = 4 To 9
+        If (Cells(RowNum, ColNum) &gt; 95) Then
+            GreaterThan95 = True
+            Exit For
+        End If
+    Next ColNum</span>
+    RowNum = RowNum + 1
+Wend
+End Sub</code></pre>
+
+    <div class="sidebar-note">
+    <h2>Option Explicit</h2>
+    <p>We have added a line at the very beginning of our macro: Option Explicit. This line is not necessary but it will help us in the long run by forcing us to declare variables before we use them. This will help guard against typos and other mistakes.</p>
+    </div>
+
+    <p>Two variables are declared to be used in this section. The ColNum variable is needed to keep track
+    of which homework assignment the For loop is looking at and thus is an integer data type. It will be explained more in a moment. The GreaterThan95 variable is a boolean type which means it can have a value of True or False This value starts each search as False and is switched to True if we find that a student has a homework grade higher than 95%. Let's take a closer look at our For loop:</p>
+
+
+
+    <p>The For statement has three parts: 
+
+    <ul><li><span style="color: #FF0000">the counter expression</span></li>
+    <li><span style="color: #0000FF">the code that will run</span></li>
+    <li><span style="color: #00BB00">the Next
+    statement</span></li></ul></p>
+
+    <p><pre><span style="color: #FF0000">For ColNum = 4 To 9</span>
+      <span style="color: #0000FF">If (Cells(RowNum, ColNum) &gt; 95) Then
+        GreaterThan95 = True
+        Exit For
+      End If</span>
+    <span style="color: #00BB00">Next ColNum</span></pre></p>
+
+    <ul>
+    <li>The first portion is the counter expression which determines how many times the loop will
+    run. It contains the controlling variable, which is ColNum for our example. Here the loop is
+    specified to run five times, from four to eight (4,5,6,7,8). This makes sense because there are
+    five homework assignments.</li>
+    <li>The code that will run fills in the next section and will run the number of times specified by
+    the counter expression. This code contains an If statement to check and see if the homework
+    assignment specified is greater than 95%. If this is True, it will change the GreaterThan95
+    variable to True and force an early exit from the For loop.</li>
+    <li>The final part is the Next statement. This is the closing line of the For statement and
+    increments the loops controlling variable for the next iteration.</li></ul>
+
+    </li>
+
+
+    <li><p>Examine the code you entered to make sure it makes sense. </p></li>
+
+    <li><p>Switch back to Excel and Test the macro by pressing Control+G.</p></li>
+
+    <p>The program should run exactly the same way as last time: this is okay, because we haven't entered any code that will directly change the gradebook. All that we've done is create a way for Excel to find out which students do or do not deserve the grade increase for having received good grades on their homework. This difference is denoted as a true or false value for the GreaterThan95 boolean variable in each row. The students who got a 95 or higher have a True value for this variable, and the rest of the students have a False value for the variable.</p>
+
+    </ol> 
+
+    <h2>VBA: If/Else</h2>
+
+    <p>Now we will use the information obtained from the For loop. We will format the student’s reported
+    grade (column O) orange if they have earned a grade adjustment. If they did not earn an adjustment, we
+    will assign the same calculated grade (column N) to their final grade reported (column O). We can put both of these conditions in one statement rather than creating a separate If statement for both.</p>
+
+    <ol class="instruction-list">
+
+    <li><p>Switch back to the code window for Module1</p></li>
+
+    <li><p>Type the following lines of code into the macro to create the If-Else statement:</p></li>
+
+    <pre><code>Option Explicit
+Sub GradeCheck()
+‘
+‘ GradeCheck Macro
+‘ Formats selected cell green and bolds text.
+‘
+‘ Keyboard Shortcut: Ctrl+g
+‘
+Dim RowNum As Integer
+Dim ColNum As Integer
+Dim GreaterThan95 As Boolean
+RowNum = 4
+While (Cells(RowNum, "B") &lt;&gt; "")
+    If Cells(RowNum, "L") = 100) Then
+        Cells(RowNum, "O") = "A"
+        Cells(RowNum, "L").Select
+        With Selection
+            .Interior.Color = 5287936
+            .Font.Bold = True
+        End With
+    End If
+    GreaterThan95 = False
+    For ColNum = 4 To 9
+        If (Cells(RowNum, ColNum) &gt; 95) Then
+            GreaterThan95 = True
+            Exit For
+        End If
+    Next ColNum
+    <span style="color: #00ffff">If (GreaterThan95) Then
+        Cells(RowNum, "O").Select
+        With Selection
+            .Interior.Color = 49407 ‘ Orange
+            .Font.Bold = True
+        End With
+    Else
+        Cells(RowNum, "O") = Cells(RowNum, "N")
+    End If</span>
+    RowNum = RowNum + 1
+Wend
+End Sub</code></pre>
+
+    <p>The If-Else statement is very similar to the If statement we used earlier. The first part is identical to the If statement. It checks to see if a Boolean expression is true, and, it true, runs the first block of code. If the Boolean expression evaluates to false, it runs the block of code after the Else portion. The structure is completed with the End If line.</p>
+
+    <p>In this example, we check to see if GreaterThan95 is True, which means they have had a homework grade higher than 95% and have earned a grade adjustment. If this is True we select their reported final grade and format it orange. If it is False, we set their final reported grade to be the same as their calculated grade. The If-Else statement is then ended with the End If line of code.</p>
+
+    <li><p>Test the macro in the regular Excel environment. The first function of our macro (formatting cells green and placing "A" values in the final grade column) should be unchanged. We should also see that if a student got a 95% homework grade, their final score is formatted orange; and if a student did not get a 95% homework grade, their reported grade is the same as their value in the M column.</p></li>
+
+    <div class="centered-image-medium">
+    <img src="images/programming-3.png"  alt="Macro test for grade">
+    </div>
+
+    <li><p>Use Ctrl+R to clean the worksheet and return to the Code View.</p></li>
+
+    </ol>
+  </section>
+  <!--For END-->
+
+  <!--Select-Case START -->
+  <section class="topic">
+    
+    <h1>VBA: Select-Case</h1>
+
+    <p>We have one more thing to do before the objectives for our macro will have been completed: for each student who has a 95% on one of their homework grades, we will increase their final letter grade by one. However, VBA isn't able to understand the letter grade system that we use (A, AB, B, etc.). Thus, we will use a more complicated programming structure called the Select-Case statement. This will allow us to assign different values to a variable according to many discrete conditions.</p>
+
+    <ol class="instruction-list">
+
+    <li><p>In the code window, type the following lines of code into the macro to create the Select-Case
+    statement:</p></li>
+
+
+    <pre><code>Option Explicit
+Sub GradeCheck()
+‘
+‘ GradeCheck Macro
+‘ Formats selected cell green and bolds text.
+‘
+‘ Keyboard Shortcut: Ctrl+g
+‘
+Dim RowNum As Integer
+Dim ColNum As Integer
+Dim GreaterThan95 As Boolean
+RowNum = 4
+While (Cells(RowNum, "B") &lt;&gt; "")
+    If Cells(RowNum, "L") = 100) Then
+        Cells(RowNum, "O") = "A"
+        Cells(RowNum, "L").Select
+        With Selection
+            .Interior.Color = 5287936
+            .Font.Bold = True
+        End With
+    End If
+    GreaterThan95 = False
+    For ColNum = 4 To 9
+        If (Cells(RowNum, ColNum) &gt; 95) Then
+            GreaterThan95 = True
+            Exit For
+        End If
+    Next ColNum
+    If (GreaterThan95) Then
+        <span style="color: #00FFFF">Select Case (Cells(RowNum, "N").Value)
+            Case "F"
+                Cells(RowNum, "O") = "D"
+            Case "D"
+                Cells(RowNum, "O") = "C"
+            Case "C"
+                Cells(RowNum, "O") = "BC"
+            Case "BC"
+                Cells(RowNum, "O") = "B"
+            Case "B"
+                Cells(RowNum, "O") = "AB"
+            Case "AB"
+                Cells(RowNum, "O") = "A"
+        End Select</span>
+        Cells(RowNum, "O").Select
+        With Selection
+            .Interior.Color = 49407 ‘ Orange
+            .Font.Bold = True
+        End With
+    Else
+        Cells(RowNum, "O") = Cells(RowNum, "N")
+    End If
+    RowNum = RowNum + 1
+Wend
+End Sub</code></pre>
+
+    <p>Here, the Select-Case statement allows us to respond differently depending on what a student’s current calculated grade is. The first line selects the specific student’s calculated grade. The statement then goes through each case until it findsa case where the letter equals the student’s calculated letter grade. It then runs the corresponding line of code for that case, which assigns a letter that we have defined as one level higher than the student’s calculated grade. The statement ends with the line End Select.</p>
+    <p>This Select-Case statement can be used for as many discrete Case conditions as necessary. We
+    have purposely left out a Case "A"
+    statement as a student cannot receive a grade higher than “A.”</p>
+
+    <li><p>Test the macro to see how it performs!</p></li>
+
+    <div class="centered-image-medium">
+    <img src="images/programming-4.png"  alt="Macro using select case">
+    </div>
+
+    <p>If you look closely, you will notice there are some errors here. For example, if someone was already given an "A" because they got a 100% on the final exam, their grade still may have been highlighted for an increase adjustment. Also, if they didn’t earn the adjustment, their final grade of an "A" may have been overridden by their calculated grade as in the fourth row from the bottom (Row 26).</p>
+
+    </ol>
+  </section>
+  <!--Select-Case END-->
+
+  <!--Debugging START -->
+  <section class="topic">
+    
+    <h1>VBA: Debugging Our Macro</h1>
+
+    <p>We’re almost there. We only need to add a bit more logic to the program to make it function perfectly. To do this, we will add an If-Else statement that will only run the homework check portion if a student has not already received an "A" in the course.</p>
+
+    <ol class="instruction-list">
+
+    <li><p>Add the finishing lines in blue.</p></li>
+
+    <pre><code>Option Explicit
+Sub GradeCheck()
+‘
+‘ GradeCheck Macro
+‘ Formats selected cell green and bolds text.
+‘
+‘ Keyboard Shortcut: Ctrl+g
+‘
+Dim RowNum As Integer
+Dim ColNum As Integer
+Dim GreaterThan95 As Boolean
+RowNum = 4
+While (Cells(RowNum, "B") &lt;&gt; "")
+    If Cells(RowNum, "L") = 100) Then
+        Cells(RowNum, "O") = "A"
+        Cells(RowNum, "L").Select
+        With Selection
+            .Interior.Color = 5287936
+            .Font.Bold = True
+        End With
+    End If
+    GreaterThan95 = False
+    For ColNum = 4 To 9
+        If (Cells(RowNum, ColNum) &gt; 95) Then
+            GreaterThan95 = True
+            Exit For
+        End If
+    Next ColNum
+    <span style="color: #00FFFF">If (Cells(RowNum, "N") &lt;&gt; "A" And Cells(RowNum, "O") &lt;&gt; "A") Then</span>
+        If (GreaterThan95) Then
+            Select Case (Cells(RowNum, "N").Value)
+                Case "F"
+                    Cells(RowNum, "O") = "D"
+                Case "D"
+                    Cells(RowNum, "O") = "C"
+                Case "C"
+                    Cells(RowNum, "O") = "BC"
+                Case "BC"
+                    Cells(RowNum, "O") = "B"
+                Case "B"
+                    Cells(RowNum, "O") = "AB"
+                Case "AB"
+                    Cells(RowNum, "O") = "A"
+            End Select
+            Cells(RowNum, "O").Select
+            With Selection
+                .Interior.Color = 49407 ‘ Orange
+                .Font.Bold = True
+            End With
+        Else
+            Cells(RowNum, "O") = Cells(RowNum, "N")
+        End If
+    <span style="color: #00FFFF">Else
+        Cells(RowNum, "O") = "A"
+    End If</span>
+    RowNum = RowNum + 1
+Wend
+End Sub</code></pre>
+
+    <p>In the If statement, we first check to see if the student did not earn an "A" (remember that &lt;&gt; means "not equal to") in the class in their original calculated grade (column N). We also check to make sure they did not get a grade increase due to receiving a 100% on the final by looking at the grade reported (column O) to make sure the program did not already assign an "A" there. If both these statements are true, it means the student has not yet earned a grade of an "A" based on the criteria tested so far. This means they are eligible to be checked for a grade increase due to a homework grade of greater than a 95%. If the boolean expression in the If statement evaluates to False, this means the student has already earned an "A" in the course. The program then goes down to the Else statement and runs the code to give the student a final grade of "A."</p>
+
+    <li><p>Run the macro.</p></li>
+
+    </ol>
+
+    <div class="centered-image-medium">
+    <img src="images/programming-5.png" alt="Macro with if-else statement">
+    </div>
+
+    <p>The macro runs successfully! Go through each student’s grade and check to make sure the grade was
+    found correctly. Here is a review of what the program does to help you check the solution:</p>
+
+    <ul>
+    <li>Uses a While loop to go through and evaluate each student individually. This uses the RowNum variable to keep track of what row is currently being modified.</li>
+    <li>Uses an If statement to see if the student has a 100% on the final. If True it assigns the student an “A” and formats the final exam grade green and bold.</li>
+    <li>Uses a For loop to look at each homework score received. If the student received a score greater than 95%, the variable GreaterThan95 is changed to True.</li>
+    <li>Uses an If-Else statement to determine if a student has received an “A ” or not. If the student has not, it runs the homework check code. If the student has, it assigns a final grade of an "A."</li>
+    <li>Uses an If-Else statement to check the variable GreaterThan95 to see if the student’s grade should be upgraded. If not, it assigns a final grade equal to the calculated grade.</li>
+    <li>Uses a Select-Case statement to determine what letter grade a student should be upgraded to based upon their calculated grade.</li>
+    </ul>
+
+    <p>Congratulations! With the use of some basic programming structures and knowledge of Excel’s "Record Macro" function, you were able to code a fairly complex program to check a gradebook. Now that this program is created, it could be used every time this class is offered to save the instructor time and avoid errors in grade calculations.</p>
+
+  </section>
+  <!--Debugging END-->
+  
+  <!-- END MAIN CONTENT -->
+
+</body>
+
+</html>
